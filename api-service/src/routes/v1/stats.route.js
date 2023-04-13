@@ -12,7 +12,7 @@ module.exports = router;
  * @swagger
  * tags:
  *   name: Stats
- *   description: Stats management and retrieval
+ *   description: Get top searched stocks
  */
 
 /**
