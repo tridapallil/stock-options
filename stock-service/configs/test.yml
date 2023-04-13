@@ -1,0 +1,3 @@
+ENV: test
+MESSAGE: 'test running'
+REGION: ${self:custom.region}

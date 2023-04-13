@@ -1,0 +1,37 @@
+service: serverless
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: ${opt:stage, 'prod'}
+  region: us-east-1
+  timeout: 10 #Default Lambda timeout 
+  memorySize: 512 #Default Lambda Memory Size
+  versionFunctions: false # No functions versioning 
+  #role: arn:aws:iam::#{AWS::AccountId}:role/existing-role
+  package:
+    excludeDevDependencies: true
+    exclude:
+      - .git/**
+      - .vscode/**
+      - .test/**
+  
+  environment: #Global Environment variables
+      ${file(./configs/${self:provider.stage}.yml)}
+
+  iamRoleStatements: # Permissions for all of your functions can be set here
+
+custom:
+  region: ${self:provider.region}
+  stage: ${opt:stage, self:provider.stage}
+  prefix: ${self:custom.stage}-${self:service}
+  process: ${self:custom.prefix}-process
+  config: ${self:custom.prefix}-config
+
+  serverless-offline:
+    host: '0.0.0.0'
+
+plugins:
+  - serverless-offline
+
+functions: ${file(serverless-dynamic.js)}

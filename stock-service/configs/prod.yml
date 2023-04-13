@@ -1,0 +1,3 @@
+ENV: prod
+MESSAGE: 'prod running'
+REGION: ${self:custom.region}

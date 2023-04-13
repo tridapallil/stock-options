@@ -1,0 +1,14 @@
+version: "3"
+services:
+
+  serverless:
+    build: .
+    volumes:
+      - /usr/src/stock-service
+    ports:
+      - "4000:3000"
+    networks:
+      - developer
+
+networks:
+  developer:

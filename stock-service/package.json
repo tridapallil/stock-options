@@ -1,0 +1,48 @@
+{
+  "name": "stock-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docker": "docker-compose up --force-recreate",
+    "dev": "serverless offline start --stage local",
+    "unit-test": "mocha --recursive test/unit/",
+    "integration-test": "mocha --recursive test/integration/",
+    "test": "jest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prettier": "prettier --check **/*.js",
+    "prettier:fix": "prettier --write **/*.js"
+  },
+  "keywords": [
+    "yeoman-generator",
+    "api",
+    "serverless",
+    "lambda",
+    "AWS"
+  ],
+  "author": "Luiz Felipe",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bluebird": "^3.7.2",
+    "serverless-pseudo-parameters": "^1.6.0",
+    "yamljs": "^0.3.0"
+  },
+  "jest": { "testEnvironment": "node" },
+  "devDependencies": {
+    "aws-sdk": "^2.780.0",
+    "chai": "^4.2.0",
+    "mocha": "^8.2.0",
+    "serverless-offline": "^8.2.0",
+    "serverless-plugin-split-stacks": "^1.9.3",
+    "eslint": "^7.0.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^24.0.1",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-security": "^1.4.0",
+    "prettier": "^2.0.5",
+    "jest": "^26.0.1"
+  }
+}

@@ -1,0 +1,8 @@
+  # Stocks API Endpoints
+  stocks-list:
+    handler: modules/stocks/endpoints/read.list
+    timeout: 30
+    events:
+      - http:
+          path: services/stocks/{symbol}
+          method: get
