@@ -90,7 +90,7 @@ The serverless was developed thinking to deploy on aws lambda. As this project i
 
 # Architecture
 
-<img src="architecture.svg" alt="logo" height="90" align="center">
+<img src="architecture.png" alt="logo" height="100%" width="100%" align="center">
 
 # Techs and Frameworks
 
